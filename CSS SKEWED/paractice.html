@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="paractice.css">
+</head>
+<body>
+        <div class="container">
+            <div class="clk">
+                <div class="input">
+                    <span id="cntnt-f">0</span>
+                    <span id="cntnt-bf">0</span>
+                    <span id="cntnt-s">0</span>
+                    <span id="cntnt-bs">0</span>
+                    <span id="cntnt-t">0</span>
+                    <span id="cntnt-ampm">0</span>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+
+<script>
+
+// n=0
+//     var h = setInterval(function(){
+       
+//         if(n==12){
+//             n=0;
+//         }
+//         n++;
+//         console.log(document.getElementsByClassName("one").innerText = n)
+
+//     },3600000)
+
+//     var m = setInterval(function(){
+        
+//         if(n==60){
+//             n=0;
+//         }
+//         n++;
+//         console.log(document.getElementsByClassName("two").innerText = n)
+
+//     },60000)
+
+//     var s = setInterval(function(){
+
+        
+//         if(n==60){
+//             n=0;
+//         }
+//         n++;
+//         // document.getElementsByClassName("three").innerText = s;
+//         console.log(document.getElementsByClassName("three").innerText = n)
+//     },1000)
+
+
+
+function displayTime(){
+    var d = new Date();
+    var hour = d.getHours();
+    var min = d.getMinutes();
+    var sec = d.getSeconds();
+    var amORpm = "AM"
+    if(hour>=12)
+    {
+        amORpm="PM"
+    };
+    if(hour>12)
+    {
+        hour= hour-12;
+    }
+    if(hour < 10)
+    {
+        hour = "0" + hour;
+    }
+    if(min < 10)
+    {
+        min = "0" + min;
+    }
+    if(sec < 10)
+    {
+        sec = "0" + sec;
+    }
+    document.getElementById("cntnt-f").innerText = hour;
+    document.getElementById("cntnt-bf").innerText = ":";
+    document.getElementById("cntnt-s").innerText = min;
+    document.getElementById("cntnt-bs").innerText = ":";
+    document.getElementById("cntnt-t").innerText = sec;
+    document.getElementById("cntnt-ampm").innerText = amORpm;
+}
+
+setInterval(displayTime,1000)
+    
+
+</script>
+
+</html>
